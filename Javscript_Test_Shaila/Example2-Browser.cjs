@@ -1,6 +1,6 @@
 //This script opens the "Google.com" and searches for Title
 
-/ *const webdriver = require('selenium-webdriver');
+/* const webdriver = require('selenium-webdriver');
 
 async function example() {
     const driver = new webdriver.Builder().forBrowser('chrome').build();
@@ -16,25 +16,7 @@ async function example() {
 
 example(); */
 
-//This script opens the "Google.com" and searches for Title
-
-/* const webdriver = require('selenium-webdriver');
-
-async function example() {
-    const driver = new webdriver.Builder().forBrowser('chrome').build();
-
-    try {
-        await driver.get('https://www.google.com');
-        const title = await driver.getTitle();
-        console.log('The title is: ', title);
-    } finally {
-        await driver.quit();
-    }
-}
-
-example();  */
-
-const { Builder, By, Key, until } = require('selenium-webdriver');
+/* const { Builder, By, Key, until } = require('selenium-webdriver');
 
 const driver = new Builder().forBrowser("chrome").build();
 
@@ -55,8 +37,8 @@ const driver = new Builder().forBrowser("chrome").build();
 
     }
 
-})();
-
+})(); */
+// This program opens the browser and logs into the website with crdentials given
 /* const { Builder, By, until } = require('selenium-webdriver');
 
 const assert = require('assert');
@@ -85,8 +67,8 @@ async function loginTest() {
     }
 }
 
-loginTest();  */
-
+loginTest(); */
+//This program opens the browser and enters the string selenium
 /* const { Builder, By } = require('selenium-webdriver');
 
 (async function example() {
@@ -101,7 +83,8 @@ loginTest();  */
     } finally {
         // await driver.quit();
     }
-})();
+})(); */
+
 const { Builder, By } = require('selenium-webdriver');
 
 (async function example() {
@@ -115,5 +98,4 @@ const { Builder, By } = require('selenium-webdriver');
     } finally {
         // await driver.quit();
     }
-})(); 
-
+})();
