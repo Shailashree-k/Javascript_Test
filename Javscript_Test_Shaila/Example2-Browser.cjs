@@ -26,6 +26,8 @@ const driver = new Builder().forBrowser("chrome").build();
         await driver.get('https://www.amazon.com');
 
             const searchBox = await driver.findElement(By.id('twotabsearchtextbox'));
+            
+        await driver.sleep(1000)
 
         await searchBox.sendKeys('Laptop', Key.RETURN);
 
