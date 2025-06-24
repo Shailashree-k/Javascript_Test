@@ -15,7 +15,7 @@ async function example() {
 }
 
 example(); */
-
+//This prgram uses Find element in Amazon .com and try to search -Laptop in search box
 /* const { Builder, By, Key, until } = require('selenium-webdriver');
 
 const driver = new Builder().forBrowser("chrome").build();
@@ -84,7 +84,7 @@ loginTest(); */
         // await driver.quit();
     }
 })(); */
-
+//Find element Example on browser
 const { Builder, By } = require('selenium-webdriver');
 
 (async function example() {
