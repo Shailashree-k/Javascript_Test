@@ -9,15 +9,14 @@ async function loginTest() {
         await driver.findElement(By.id('email')).sendKeys('test@gmail.com');
         await driver.findElement(By.id('password')).sendKeys('Password@12345');
         await driver.findElement(By.name('login')).click();
-        const pageTitle = await driver.getTitle();
+      //  const pageTitle = await driver.getTitle();
         await driver.wait(until.titleIs('Welcomepage'));
         console.log('TestCase1 :Login is successful!');
-
     } catch (error) {
         console.error('TestCase:1 Login failed or an error occurred:', error);
     } finally {
         await driver.quit();
-    } } ;
+    } }
 
 // Validate that login is failed by entering the invalid password
 async function validateLoginFailure() {
@@ -29,12 +28,9 @@ async function validateLoginFailure() {
        await driver.findElement(By.id('email')).sendKeys('test@gmail.com');
        await driver.findElement(By.id('password')).sendKeys('wrongPassword');
        await driver.findElement(By.name('login')).click()
-       // Maximize the browser window
-       await driver.manage().window().maximize();
-       // Wait for the error message
+       // Wait for the error message as invalid credentials
        let errorElement = await driver.wait(until.elementLocated(By.className('MuiTypography-root MuiTypography-subtitle1 css-eh7hpo')), 5000);
-      // await driver.sleep(500)
-       await driver.sleep(200)
+       await driver.sleep(500)
        if (await errorElement.isDisplayed()) {
            console.log('Testcase2 Login failed: Invalid credentials.');
        }
@@ -43,7 +39,7 @@ async function validateLoginFailure() {
 
    } finally {
        await driver.quit();
-   }} ;
+   }}
 
 //Verify Logout
 async function logout() {
@@ -56,7 +52,7 @@ async function logout() {
         await driver.findElement(By.id('password')).sendKeys('Password@12345');
     //    await driver.sleep(500)
         await driver.findElement(By.name('login')).click();
-        const pageTitle = await driver.getTitle();
+    //    const pageTitle = await driver.getTitle();
         await driver.wait(until.titleIs('Welcomepage'));
      //   await driver.sleep(1000)
         let Button = await driver.findElement(By.xpath('//button[text()="Click to logout"]'));
@@ -67,7 +63,7 @@ async function logout() {
        // await driver.sleep(1000)
     } finally {
         await driver.quit();
-    } } ;
+    } }
 //Verify the remember me option
 async function Verifyremember() {
     let driver = await new Builder().forBrowser('chrome').build();
@@ -104,8 +100,7 @@ async function Verifyremember() {
     }  finally {
         // Quit the driver
         await driver.quit();
-    } } ;
-
+    } }
 loginTest()
 validateLoginFailure()
 logout()
